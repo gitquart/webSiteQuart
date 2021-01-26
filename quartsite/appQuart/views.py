@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import view
 
+"""
+"render" busca en automático las vistas en la carpeta "templates" dentro de cada app, ejemplo "appQuart->templates"
+"""
 # Create your views here.
 
 def index(request):
-    return index
+    return render(request,'index.html')
