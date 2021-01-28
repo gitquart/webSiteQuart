@@ -8,6 +8,8 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
+
+Ulyses: Tutorial for deploying to heroku : https://www.youtube.com/watch?v=XdZeg3iP5BM
 """
 
 from pathlib import Path
