@@ -1,3 +1,64 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Prism by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
 <html>
-    LANDING PAGE
+	<head>
+		<title>Welcome to Quart</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+	<body>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner split">
+					<section>
+						<h2>Quart Consulting</h2>
+					</section>
+					<section>
+						<p>Web site under construction</p>
+
+					</section>
+				</div>
+			</section>
+
+
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 alt">
+				<div class="inner">
+					<div class="spotlight">
+						<div class="image">
+							<img src="{ % static 'images/pic01.jpg' % }" alt="" />
+						</div>
+						<div class="content">
+							<h3>Ipsum pharetra tempus</h3>
+							<p>Lorem ipsum nisl sed cursus magna et amet veroeros. Sed phasellus malesuada quis orci. Pellentesque eget consequat.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; Quart. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{ % static 'assets/js/jquery.min.js' % }"></script>
+			<script src="{ % static 'assets/js/skel.min.js' % }"></script>
+			<script src="{ % static 'assets/js/util.js' % }"></script>
+			<script src="{ % static 'assets/js/main.js' % }"></script>
+
+	</body>
 </html>
