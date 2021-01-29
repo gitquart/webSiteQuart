@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 Ulyses: 
 Tutorial for deploying to heroku : 
-1) https://www.youtube.com/watch?v=XdZeg3iP5BM (Didn't work very well)
-2) https://www.youtube.com/watch?v=kBwhtEIXGII
+
+1) https://www.youtube.com/watch?v=kBwhtEIXGII (Worked well)
 
 Every line changed for heroku deployments is marked with "H"
 """
