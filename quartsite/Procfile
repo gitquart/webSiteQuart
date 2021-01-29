@@ -1,1 +1,1 @@
-web: gunicorn quartsite.wsgi --log-file -
+web: gunicorn /quartsite/quartsite.wsgi --log-file -
