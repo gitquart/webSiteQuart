@@ -19,9 +19,8 @@ from django.config import settings
 from django.config.urls.static import static
 
 urlpatterns = [
-    path('', admin.site.urls),
-    path('admin/', admin.site.urls),
-    path('',include('appQuart.urls'))
+    
+    path('/quart',include('appQuart.urls'))
     
 ]
 
