@@ -9,7 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 
-Ulyses: Tutorial for deploying to heroku : https://www.youtube.com/watch?v=XdZeg3iP5BM
+Ulyses: 
+Tutorial for deploying to heroku : 
+1) https://www.youtube.com/watch?v=XdZeg3iP5BM (Didn't work very well)
+2) https://www.youtube.com/watch?v=kBwhtEIXGII
+
+Every line changed for heroku deployments is marked with "H"
 """
 
 from pathlib import Path
@@ -26,10 +31,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#0gu39zl-*&yty0mmx38lkw-lyta2rh!vqn2j!cu^=mq_74u1s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#H
 DEBUG = False
 
 # "*" means all hosts allowed
-ALLOWED_HOSTS = ['*']
+#H
+ALLOWED_HOSTS = ['app-quartwebsite.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -52,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #H
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
@@ -123,11 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#H
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-  os.path.join(BASE_DIR,'static')
-]
-
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
