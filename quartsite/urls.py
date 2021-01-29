@@ -19,11 +19,11 @@ from django.config import settings
 from django.config.urls.static import static
 
 urlpatterns = [
-    #path('', admin.site.urls),
-    #path('admin/', admin.site.urls),
+    path('', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('',include('appQuart.urls'))
     
-] +static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+]
 
 
 
