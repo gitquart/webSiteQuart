@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.config import settings
-from django.config.urls.static import static
+
 
 urlpatterns = [
-    
-    path('/quart',include('appQuart.urls'))
+
+    path('',include('appQuart.urls'))
     
 ]
 
