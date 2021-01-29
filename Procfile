@@ -1,0 +1,1 @@
+web: gunicorn quartsite.wsgi --log-file -
