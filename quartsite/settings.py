@@ -36,6 +36,9 @@ DEBUG = False
 
 # "*" means all hosts allowed
 #H
+#Tutorial to domain setup : https://www.youtube.com/watch?v=yFd-YhG6N2g
+#For Go daddy: ALLOWED_HOSTS is the list of servers accepted to get the web site, then, for practical things keep it with '*' or add all the urls that will get the web site
+#If you don't change this value for the correct web sites, like go daddy, it will return a BAD REQUEST
 ALLOWED_HOSTS = ['*']
 
 
