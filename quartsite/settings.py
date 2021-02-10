@@ -36,7 +36,7 @@ DEBUG = False
 
 # "*" means all hosts allowed
 #H
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
