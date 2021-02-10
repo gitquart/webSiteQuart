@@ -36,7 +36,7 @@ DEBUG = False
 
 # "*" means all hosts allowed
 #H
-ALLOWED_HOSTS = ['app-quartwebsite.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
