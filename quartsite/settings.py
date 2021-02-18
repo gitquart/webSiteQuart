@@ -14,7 +14,6 @@ Tutorial for deploying to heroku :
 
 1) https://www.youtube.com/watch?v=kBwhtEIXGII (Worked well)
 
-Every line changed for heroku deployments is marked with "H"
 """
 
 from pathlib import Path
@@ -31,11 +30,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#0gu39zl-*&yty0mmx38lkw-lyta2rh!vqn2j!cu^=mq_74u1s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#H
+#For local host DEBUF=FALSE, For Go daddy (production) =True, nothin else to change for PRODUCTION depleoyment
 DEBUG = False
 
 # "*" means all hosts allowed
-#H
 #Tutorial to domain setup : https://www.youtube.com/watch?v=yFd-YhG6N2g
 #For Go daddy: ALLOWED_HOSTS is the list of servers accepted to get the web site, then, for practical things keep it with '*' or add all the urls that will get the web site
 #If you don't change this value for the correct web sites, like go daddy, it will return a BAD REQUEST
@@ -62,7 +60,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #H
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
@@ -134,7 +131,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-#H
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 
