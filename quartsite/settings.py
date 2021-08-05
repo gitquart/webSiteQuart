@@ -20,7 +20,10 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+#For local BASE_DIR=C:\Users\1098350515\Documents\quart\webSiteQuart
 BASE_DIR = Path(__file__).resolve().parent.parent
+print('This is BASE_DIR:',str(BASE_DIR))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,8 +33,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#0gu39zl-*&yty0mmx38lkw-lyta2rh!vqn2j!cu^=mq_74u1s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#For local host DEBUF=FALSE, For Go daddy (production) =True, nothin else to change for PRODUCTION depleoyment
-DEBUG = False
+#For local host DEBUG=True, For Go daddy (production) DEBUG =False
+#For localhost testing use DEBUG=TRUE so it will take the static files from each static folder in each folder app
+#For Production , use DEBUG = FALSE and it will take all static files from staticfiles main folder for all sites
+DEBUG = True
 
 # "*" means all hosts allowed
 #Tutorial to domain setup : https://www.youtube.com/watch?v=yFd-YhG6N2g
@@ -131,6 +136,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#STATIC_ROOT is the folder where all static files for all apps will live
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+print('STATIC_ROOT:',str(STATIC_ROOT))
+#STATIC_URL is for each app static folder, so this indicates every app will have a folder called "/static/"
+#where static files (css,etc) will be s
 STATIC_URL = '/static/'
+
+
 

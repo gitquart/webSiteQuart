@@ -1,0 +1,28 @@
+Hacerlo en web
+
+Escenario:
+
+"Filtros de la aplicación":Todos los escenarios con filtros de : hora, commodity y dominio/ appname
+
+1)Escenario :Ver sólo word cloud
+
+1.1) Genere el word cloud general de un conjunto ya filtrado
+1.2) Cuando se genere el word cloud por cada noticia individual resultado de los filtros
+que se recorran automáticamente (como los precios o indicadores de bolsa)
+Noticias Individuales (Una ventana):
+1.3) Abajo del word cloud individual que traiga: dominio, "Ver noticia"
+1.4) Dos franjas de marquesinas cada una con sus filtros  de noticias
+
+Acumulado (Una ventana):
+1) Filtros, y un listado de los commodities con más puntaje por cada noticia y su link
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2) Escenario : El grid tenga las noticias resultado de los Filtros de aplicación
+
+2.1) A la derecha el grid (Fuente, Título,Fecha/Hora), a la izquierda (arriba el word cloud y abajo el detalle)
+En el detalle: Word cloud arriba,Fuente, Título, Fecha/Hora, url, commodity,dominio (source)
+
+Nota: Para definir una noticia importante, habría que definir una lista de palabras clave por usuario para que el algoritmo mande notificaciones al usuario
+
+Hacer login y registro para trading. con autorización
