@@ -6,5 +6,6 @@ from . import views
 #For example, if a href has "tradingApp" it will look for it here at first
 urlpatterns = [
     path('', views.index),
-    path('tradingApp',views.tradingNewsApp)
+    path('tradingApp_login',views.tradingNewsApp_login),
+    path('tradingApp_register',views.tradingNewsApp_register)
 ]

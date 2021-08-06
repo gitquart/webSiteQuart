@@ -9,9 +9,11 @@ from django.http import HttpResponse
 def index(request):
     return render(request,'index.html')
 
-def tradingNewsApp(request):
-    print('----------------Request:',str(request))
+def tradingNewsApp_login(request):
     return render(request,'trading_app_login.html')
+
+def tradingNewsApp_register(request):
+    return render(request,'trading_app_register.html')
 
 
 
