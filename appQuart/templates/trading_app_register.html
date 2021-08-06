@@ -1,1 +1,40 @@
-REGISTER
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <!--CSS files here-->
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'tradingAppRegister/css/tradingAppRegister.css' %}" rel="stylesheet">
+
+    </head>
+    <body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <body>
+            <section class="login">
+                <div class="login_box">
+                    <div class="left">
+                        <div class="top_link"><a href="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
+                        <div class="contact">
+                            <form action="">
+                                <h3>REGISTER</h3>
+                                <input type="text" placeholder="NAME">
+                                <input type="text" placeholder="FIRSR LAST NAME">
+                                <input type="text" placeholder="SECOND LAST NAME">
+                                <input type="text" placeholder="COMPANY">
+                                <input type="text" placeholder="E-MAIL">
+                                <input type="text" placeholder="PASSWORD">
+                                <button class="submit">Submit</button>
+        
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <div class="right" style="background: linear-gradient(212.38deg, rgba(236, 224, 229, 0.7) 0%, rgba(28, 245, 245, 0.71) 100%), url('{% static 'tradingAppRegister/img/register_image.jpg' %}');background-repeat: no-repeat;background-size: 625px 755px;">
+                    </div>
+                </div>
+            </section>
+        </body>
+        </html>
+        
+    </body>
+</html>    
