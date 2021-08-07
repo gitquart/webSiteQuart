@@ -16,9 +16,9 @@
                         <div class="contact">
                             <form>
                                 <h3>SIGN IN</h3>
-                                <input type="text" placeholder="USERNAME">
-                                <input type="text" placeholder="PASSWORD">
-                                <button onclick="submit()" class="submit">Log in</button>
+                                <input id='username' type="text" placeholder="USERNAME">
+                                <input id='pwd' type="text" placeholder="PASSWORD">
+                                <button onclick="login()" class="submit">Log in</button>
                                 <div style="margin-top: 26px;margin-left: 53px;">
                                     <span>Not signed yet? <a href="/tradingApp_register">Register</a></span>
                                 </div>
@@ -30,6 +30,8 @@
                 </div>
             </section>
 
-            <script src="{% static 'tradingAppLogin/js/login.js' %}"></script>
+            <script src="{% static 'tradingAppLogin/js/login.js' %}" ></script>
+            
+
     </body>
 </html>    

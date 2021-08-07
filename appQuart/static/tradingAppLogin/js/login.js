@@ -1,5 +1,7 @@
-function submit()
+function login()
 {
-
-    console.log('sasasasa');
+    
+    var username=document.getElementById('username').nodeValue;
+    var pwd=document.getElementById('pwd').nodeValue;
+    alert(username+','+pwd);
 }
