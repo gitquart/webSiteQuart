@@ -1,7 +1,7 @@
 function login()
 {
     
-    var username=document.getElementById('username').nodeValue;
-    var pwd=document.getElementById('pwd').nodeValue;
+    var username=$('#username').val()
+    var pwd=$('#pwd').val()
     alert(username+','+pwd);
 }
