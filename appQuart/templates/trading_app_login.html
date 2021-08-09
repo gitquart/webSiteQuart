@@ -14,10 +14,11 @@
                     <div class="left">
                         <div class="top_link"><a href="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
                         <div class="contact">
-                            <form>
+                            <form action="login" method="POST">
+                                {% csrf_token %}
                                 <h3>SIGN IN</h3>
-                                <input id='username' type="text" placeholder="USERNAME">
-                                <input id='pwd' type="text" placeholder="PASSWORD">
+                                <input id='username' name='username' type="text" placeholder="USERNAME">
+                                <input id='pwd' name='pwd' type="text" placeholder="PASSWORD">
                                 <button onclick="login()" class="submit">Log in</button>
                                 <div style="margin-top: 26px;margin-left: 53px;">
                                     <span>Not signed yet? <a href="/tradingApp_register">Register</a></span>

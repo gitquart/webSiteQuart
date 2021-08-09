@@ -15,5 +15,13 @@ def tradingNewsApp_login(request):
 def tradingNewsApp_register(request):
     return render(request,'trading_app_register.html')
 
+def login(request):
+    print('***************IN**********************************')
+    strusername=request.POST['username']    
+
+    print('****************************Username:',strusername)
+
+    return render(request,'trading_app_login.html',context={'res':'Hola'})
+
 
 

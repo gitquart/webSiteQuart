@@ -7,5 +7,6 @@ from . import views
 urlpatterns = [
     path('', views.index),
     path('tradingApp_login',views.tradingNewsApp_login),
-    path('tradingApp_register',views.tradingNewsApp_register)
+    path('tradingApp_register',views.tradingNewsApp_register),
+    path('login',views.login)
 ]
