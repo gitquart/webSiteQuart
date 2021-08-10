@@ -7,3 +7,12 @@ from django.db import models
 
 # Create your models here.
 
+class Usuario(models.Model):
+    nombre= models.CharField(max_length=80)
+    apellidopaterno = models.CharField(max_length=80)
+    apellidomaterno = models.CharField(max_length=80)
+    empresa = models.CharField(max_length=80)
+    correo = models.CharField(max_length=80)
+    contrasena = models.CharField(max_length=80)
+    fechacompleta =models.DateTimeField()
+    autorizado = models.BooleanField()
