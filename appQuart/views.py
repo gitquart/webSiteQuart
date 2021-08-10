@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
-import postgresql as db
 
 
 """
@@ -22,20 +21,9 @@ def login(request):
     if request.is_ajax and request.method == "POST":
         strusername=str(request.POST['username'])
         strpwd=str(request.POST['pwd'])
+        response=None
 
-        #Check if user is in database
-        res=None
-        print('-------------1-----------------')
-        response=False
-        print('-------------2-----------------')
-        query=f"select id from usuario where correo='{strusername}' and contrasena='{strpwd}' "
-        print(query)
-        print('-------------3-----------------')
-        res=db.getQuery(query)
-        print('-------------4-----------------')
-        if res: 
-            #User already registered 
-            response=True
+        #Database logic here...
 
         return JsonResponse({'logged':response}, status=200)
 

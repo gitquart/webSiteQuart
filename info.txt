@@ -1,0 +1,3 @@
+database super user django: ulysesrico
+mail: ulyses@quart.com.mx
+pwd: 1234
