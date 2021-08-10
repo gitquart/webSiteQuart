@@ -94,8 +94,12 @@ WSGI_APPLICATION = 'quartsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd7vvujncq3os5s',
+        'USER': 'acanhvmrdorzis',
+        'PASSWORD': 'e4a2d5e50f22dd51728eff619d70c9b172317f7e89d767c34f3b2aba91c0f339',
+        'HOST': 'ec2-23-23-164-251.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
