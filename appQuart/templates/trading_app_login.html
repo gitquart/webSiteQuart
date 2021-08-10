@@ -17,7 +17,7 @@
                     <div class="left">
                         <div class="top_link"><a href="{% url 'index' %}"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
                         <div class="contact">
-                            <form id='frm_login' action="/login" method="POST">
+                            <form id='frm_login'>
                                 <!-- "csrf_token" is needed to sen the infomation safely to server-->
                                 {% csrf_token %}
                                 <h3>SIGN IN</h3>
@@ -43,30 +43,39 @@
                   {
                     var username=$('#username').val();
                     var pwd= $('pwd').val();  
-
-                    if (username!='' && pwd!='')
+                    $("#frm_login").submit(function (e) 
                     {
-                        $("#frm_login").submit(function (e) 
+                        //preventDefault will cancel the submit  
+                        e.preventDefault();
+                        if (username!='' && pwd!='')
                         {
-                          e.preventDefault();
-                          var serializedData = $(this).serialize();
-                      
-                          $.ajax({
+                              //If all data is filled, submit
+                              var serializedData = $(this).serialize();
+                              $.ajax({
 
-                              url:"{% url 'login_process' %}",
-                              dataType:'text',
-                              method:'POST',
-                              data:serializedData,
-                              success: function(result)
-                              {
-                                  var jsonRes=JSON.parse(result)
-                                  alert(jsonRes['result']);
-                                  location.reload();
-                              }
-                           });
+                                url:"{% url 'login_process' %}",
+                                dataType:'text',
+                                method:'POST',
+                                data:serializedData,
+                                success: function(result)
+                                {
+                                    var jsonRes=JSON.parse(result)
+                                    alert(jsonRes['result']);
+                                    location.reload();
+                                }
+                             });
+
+                        }
+                        else
+                        {
+                            alert('Please fill user name and password');
+                            location.reload();
+                            
+                        }
+                      
                         });
                        //End form submit
-                    }
+                   
                 }
                 //End function login
 
