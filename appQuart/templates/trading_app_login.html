@@ -2,26 +2,30 @@
 {% load static %}
 <html lang="en">
     <head>
+        <title>Log in to the Trading App</title>
         <!--CSS files here-->
         <!-- Bootstrap CSS File -->
+        <% block css%>
         <link href="{% static 'tradingAppLogin/css/tradingAppLogin.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <% endblock css%>
        
     </head>
     <body> 
             <section class="login">
                 <div class="login_box">
                     <div class="left">
-                        <div class="top_link"><a href="/"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
+                        <div class="top_link"><a href="{% url 'index' %}"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">Return home</a></div>
                         <div class="contact">
-                            <form action="login" method="POST">
+                            <form id='frm_login' action="/login" method="POST">
+                                <!-- "csrf_token" is needed to sen the infomation safely to server-->
                                 {% csrf_token %}
                                 <h3>SIGN IN</h3>
                                 <input id='username' name='username' type="text" placeholder="USERNAME">
                                 <input id='pwd' name='pwd' type="text" placeholder="PASSWORD">
                                 <button onclick="login()" class="submit">Log in</button>
                                 <div style="margin-top: 26px;margin-left: 53px;">
-                                    <span>Not signed yet? <a href="/tradingApp_register">Register</a></span>
+                                    <span>Not signed yet? <a href="{% url 'register_app' %}">Register</a></span>
                                 </div>
                             </form>
                         </div>
@@ -30,9 +34,44 @@
                     </div>
                 </div>
             </section>
-
-            <script src="{% static 'tradingAppLogin/js/login.js' %}" ></script>
+            
+            <% block javascript %>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script>
+                  
+                  function login()
+                  {
+                    var username=$('#username').val();
+                    var pwd= $('pwd').val();  
+
+                    if (username!='' && pwd!='')
+                    {
+                        $("#frm_login").submit(function (e) 
+                        {
+                          e.preventDefault();
+                          var serializedData = $(this).serialize();
+                      
+                          $.ajax({
+
+                              url:"{% url 'login_process' %}",
+                              dataType:'text',
+                              method:'POST',
+                              data:serializedData,
+                              success: function(result)
+                              {
+                                  var jsonRes=JSON.parse(result)
+                                  alert(jsonRes['result']);
+                                  location.reload();
+                              }
+                           });
+                        });
+                       //End form submit
+                    }
+                }
+                //End function login
+
+            </script>
+            <% endblock javascript %>
             
 
     </body>
