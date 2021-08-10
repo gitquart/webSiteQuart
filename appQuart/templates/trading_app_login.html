@@ -60,21 +60,23 @@
                                 success: function(result)
                                 {
                                     var jsonRes=JSON.parse(result)
-                                    alert(jsonRes['result']);
+                                    if (jsonRes)
+                                        alert('Welcome')
+                                    else
+                                        alert('Please register')    
                                     
                                 }
                              });
 
                         }
                         else
-                        {
                             alert('Please fill user name and password');
                            
                             
-                        }
+                        
                       
                         });
-                       //End form submit
+                       //End frm_login submit event
 
                    
                  });

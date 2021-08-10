@@ -18,15 +18,26 @@ def tradingNewsApp_register(request):
     return render(request,'trading_app_register.html')
 
 def login(request):
+    #In trading_app_login.html javascript already has a filter for empty values
     if request.is_ajax and request.method == "POST":
         strusername=str(request.POST['username'])
         strpwd=str(request.POST['pwd'])
-        print('username:',strusername) 
-        print('password:',strpwd)
-        dictresponse={'result':''}
-        dictresponse['result']='OK'
-        
-        return JsonResponse(dictresponse, status=200)
+
+        #Check if user is in database
+        res=None
+        print('-------------1-----------------')
+        response=False
+        print('-------------2-----------------')
+        query=f"select id from usuario where correo='{strusername}' and contrasena='{strpwd}' "
+        print(query)
+        print('-------------3-----------------')
+        res=db.getQuery(query)
+        print('-------------4-----------------')
+        if res: 
+            #User already registered 
+            response=True
+
+        return JsonResponse({'logged':response}, status=200)
 
 
 
