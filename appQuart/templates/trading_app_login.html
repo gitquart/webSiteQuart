@@ -61,8 +61,7 @@
                                 {
                                     var jsonRes=JSON.parse(result)
                                     var logged='';
-                                    logged=Integer.parse(jsonRes['logged']);
-                                    alert(logged)
+                                    logged=jsonRes['logged'];
                                     if (logged==1)
                                         alert('Welcome')
                                     else

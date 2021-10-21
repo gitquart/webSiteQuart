@@ -8,5 +8,6 @@ urlpatterns = [
     path('', views.index,name='index'),
     path('tradingApp_login',views.tradingNewsApp_login,name='login_app'),
     path('tradingApp_register',views.tradingNewsApp_register,name='register_app'),
-    path('login',views.login,name='login_process')
+    path('login',views.login,name='login_process'),
+    path('tradingApp',views.tradingNewsApp,name='tradingApp')
 ]
