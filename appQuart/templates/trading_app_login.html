@@ -63,13 +63,12 @@
                                     var logged='';
                                     logged=jsonRes['logged'];
                                     if (logged==1)
-                                    {
-                                        alert('Welcome')
-                                    }
+                                        //Logged, hence go to the App
+                                        window.location.replace('/tradingApp');
                                     else
-                                    {
-                                        alert('Please register') 
-                                    }   
+                                        //Not logged yet, hence redirect to RegisterApp
+                                        window.location.replace('/tradingApp_register'); 
+   
                                     
                                 }
                              });
