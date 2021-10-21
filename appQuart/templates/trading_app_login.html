@@ -20,8 +20,8 @@
                                 <!-- "csrf_token" is needed to sen the infomation safely to server-->
                                 {% csrf_token %}
                                 <h3>SIGN IN</h3>
-                                <input id='username' name='username' type="text" placeholder="USERNAME">
-                                <input id='pwd' name='pwd' type="text" placeholder="PASSWORD">
+                                <input id='mail' name='mail' type="text" placeholder="MAIL">
+                                <input id='pwd' name='pwd' type="password" placeholder="PASSWORD">
                                 <button id='btnSubmit' class="submit">Log in</button>
                                 <div style="margin-top: 26px;margin-left: 53px;">
                                     <span>Not signed yet? <a href="{% url 'register_app' %}">Register</a></span>
@@ -41,13 +41,13 @@
                  $('#btnSubmit').click(function (){
 
                       
-                    var username=$('#username').val();
+                    var mail=$('#mail').val();
                     var pwd= $('#pwd').val();  
                    $("#frm_login").on('submit',function (e) 
                    {
                         //preventDefault will cancel the submit  
                         
-                        if (username!='' && pwd!='')
+                        if (mail!='' && pwd!='')
                         {
                               //If all data is filled, submit
                               var serializedData = $(this).serialize();
@@ -60,7 +60,10 @@
                                 success: function(result)
                                 {
                                     var jsonRes=JSON.parse(result)
-                                    if (jsonRes)
+                                    var logged='';
+                                    logged=Integer.parse(jsonRes['logged']);
+                                    alert(logged)
+                                    if (logged==1)
                                         alert('Welcome')
                                     else
                                         alert('Please register')    

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse
+from django.http import JsonResponse
+from appQuart.models import Usuario
 
 
 """
@@ -19,12 +20,16 @@ def tradingNewsApp_register(request):
 def login(request):
     #In trading_app_login.html javascript already has a filter for empty values
     if request.is_ajax and request.method == "POST":
-        strusername=str(request.POST['username'])
+        strmail=str(request.POST['mail'])
         strpwd=str(request.POST['pwd'])
-        response=None
-
+        response=0
         #Database logic here...
-
+        #Look for the mail, if it already exists: Login, if not then Register
+        resultQuery=None
+        resultQuery=Usuario.objects.filter(correo=strmail,contrasena=strpwd)
+        if resultQuery.count()>0:
+            response=1
+        
         return JsonResponse({'logged':response}, status=200)
 
 
